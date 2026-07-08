@@ -7,9 +7,7 @@ Managing family documents (Aadhaar, PAN, Passport, License, Insurance, etc.) man
 This system helps track expiry, required actions, and monthly document tasks in one place.
 
 MVP Features
-- User authentication (JWT)
 - Family member management
-- Document CRUD (create, view, update, delete)
 - Expiry status tracking:
   - `VALID`
   - `EXPIRING`
