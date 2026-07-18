@@ -11,6 +11,9 @@ urlpatterns = [
 
     # Document APIs
     path("api/", include("apps.documents.urls")),
+
+    # Dashboard APIs
+    path("api/dashboard/", include("apps.dashboard.urls")),
 ]
 
 if settings.DEBUG:
