@@ -2,6 +2,7 @@ from django.conf import settings
 from django.db import models
 from apps.users.models import FamilyMember
 from datetime import date, timedelta
+from .constants import VALID, EXPIRING, ACTION_REQUIRED, NO_EXPIRY
 
 class Document(models.Model):
     owner = models.ForeignKey(
@@ -31,26 +32,13 @@ class Document(models.Model):
     max_length=20,
     choices=DOCUMENT_TYPES
     )
-
-    STATUS_CHOICES = [
-    ("VALID", "Valid"),
-    ("EXPIRING", "Expiring Soon"),
-    ("ACTION_REQUIRED", "Action Required"),
-    ]
-
     
     file = models.FileField(upload_to="documents/")
 
     issue_date = models.DateField()
 
     expiry_date = models.DateField(null=True, blank=True)
-
-    #status = models.CharField(
-    #    max_length=20,
-    #    choices=STATUS_CHOICES,
-    #    default="VALID"
-    #)
-
+  
     created_at = models.DateTimeField(auto_now_add=True)
 
     def get_status(self):
