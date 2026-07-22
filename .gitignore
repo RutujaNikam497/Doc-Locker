@@ -1,2 +1,10 @@
 __pycache__/
 *.py[cod]
+
+# Django
+media/
+db.sqlite3
+.env
+
+# Python
+.venv/
