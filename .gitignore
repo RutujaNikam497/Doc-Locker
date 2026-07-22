@@ -8,3 +8,6 @@ db.sqlite3
 
 # Python
 .venv/
+
+# VS Code
+.vscode/
